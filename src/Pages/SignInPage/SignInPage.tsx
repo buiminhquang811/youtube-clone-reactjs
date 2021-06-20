@@ -25,6 +25,7 @@ const SignInPage: React.FC = () => {
     }).then((response) => {
       sessionStorage.setItem("loggedIn", "true");
       sessionStorage.setItem("name", name);
+      sessionStorage.setItem("channelName", channelName);
       sessionStorage.setItem("imageUrl", imageUrl);
       sessionStorage.setItem("googleId", googleId);
       history.push('/');
@@ -34,7 +35,7 @@ const SignInPage: React.FC = () => {
   return (
     <div className="SignInPage">
       <div className="Container">
-        {signInOption == "" ? (
+        {signInOption === "" ? (
           <div className="body">
             <button id="bttn" onClick={() => setSignInOption("create")}>
               Create Account
@@ -46,10 +47,10 @@ const SignInPage: React.FC = () => {
         ) : (
           <>
             <div className="top">
-              <h1>{signInOption == 'create' ? 'Create Account' : 'Sign In'} With Google</h1>
+              <h1>{signInOption === 'create' ? 'Create Account' : 'Sign In'} With Google</h1>
             </div>
             <div className="body">
-              {signInOption == 'create' && (
+              {signInOption === 'create' && (
                 <input type="text" placeholder="Channel Name..." onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                   setChannelName(event.target.value)
                 }} />

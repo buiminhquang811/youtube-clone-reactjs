@@ -4,7 +4,7 @@ import './MainPage.css';
 import { ToggleSidebarContext } from '../../Helper/Context';
 
 const MainPage: React.FC = () => {
-  const { showSidebar, setShowSidebar } = useContext(ToggleSidebarContext);
+  const { showSidebar } = useContext(ToggleSidebarContext);
   return (
     <div className="MainPage">
       <div className="center">

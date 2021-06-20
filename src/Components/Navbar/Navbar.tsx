@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   const { showSidebar, setShowSidebar } = useContext(ToggleSidebarContext);
 
   useEffect(() => {
-    if (sessionStorage.getItem('loggedIn') == 'true') {
+    if (sessionStorage.getItem('loggedIn') === 'true') {
       setLoggedIn(true);
       setProfilePicture(sessionStorage.getItem('imageUrl') as string);
     }

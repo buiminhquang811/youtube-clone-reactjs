@@ -32,7 +32,7 @@ const AccountPage: React.FC = () => {
         </div>
         <div className="BodyContainer">
           <h1>{profileInfo.channelName} </h1>
-          <img src={profileInfo.profilePicture} />
+          <img src={profileInfo.profilePicture} alt="" />
           <h3>{profileInfo.email}</h3>
           <hr />
           <h4> Channel Birthdate: {profileInfo.createdAt}</h4>
