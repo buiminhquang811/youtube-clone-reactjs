@@ -1,18 +1,18 @@
-import React from 'react';
-import Navbar from '../../Components/Navbar/Navbar';
+import React, { useContext } from 'react';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import './MainPage.css';
+import { ToggleSidebarContext } from '../../Helper/Context';
 
-export default function MainPage() {
+const MainPage: React.FC = () => {
+  const { showSidebar, setShowSidebar } = useContext(ToggleSidebarContext);
   return (
     <div className="MainPage">
-      <div className="top">
-        <Navbar />
-      </div>
       <div className="center">
-        <Sidebar />
+        {showSidebar && <Sidebar />}
         <div className="VideoView"></div>
       </div>
     </div>
   )
 }
+
+export default MainPage;
